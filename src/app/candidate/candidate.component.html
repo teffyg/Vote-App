@@ -1,0 +1,14 @@
+<div class="card-header bg-info text-light">
+    <h3>Elija a su candidato</h3>
+</div>
+<br>
+<div *ngIf="candidates && 0 < candidates.length">
+  <ul >
+    <li *ngFor="let c of candidates">
+      <img src= {{c.img}} class="rounded-circle">     
+      <button (click)="candidateOnClick(c)" class="btn btn-info m-3" type="submit">{{c.name}} {{c.surname}}
+        <br><em> {{c.party}} </em>
+      </button>
+    </li>
+  </ul>
+</div>

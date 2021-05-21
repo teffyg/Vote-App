@@ -1,0 +1,41 @@
+
+<div class="container">
+    <div class="card-header bg-info text-light">
+      <h3>Ingrese sus datos para votar</h3>
+    </div>
+    <div *ngIf="showPanel" class="alert alert-danger" role="alert">
+        Usted ya ha votado!
+    </div>  
+    <div class="card-body bg-light">
+      <form #userForm="ngForm"  class="container" (ngSubmit)="saveUser()">
+        <div class="form-group">
+          <label for="voterName">Nombre</label>
+          <input [(ngModel)]="user.name" type="text" class="form-control" id="voterName"  name="name" placeholder="Ingrese su nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="voterSurname">Apellido</label>
+          <input  [(ngModel)]="user.surname" type="text" class="form-control" id="voterSurname"  name="surname" placeholder="Ingrese su apellido" required>
+        </div>
+        <div class="form-group">
+          <label for="voterId">DNI</label>
+          <input  [(ngModel)]="user.dni" type="number"  class="form-control" id="voterDni"  name="dni" placeholder="Ingrese su DNI" required >
+        </div>
+        <div class="form-group">
+            <label for="voterSex">Sexo</label>
+          <select  [(ngModel)]="user.sex" class="form-control" type="text" name="sex" placeholder="Sexo..." value="" required>
+              <option value="" disabled>Elija el sexo</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!userForm.valid">Votar</button>
+        </div>
+      </form>
+
+    </div>
+
+
+        
+

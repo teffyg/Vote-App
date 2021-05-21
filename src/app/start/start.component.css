@@ -1,0 +1,15 @@
+#img{
+    background-image: url("../../assets/backimg.jpg");
+    background-size: cover ;
+    background-repeat: no-repeat;
+    height: 400px;
+    
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.col   {
+    margin-top: 150px
+}

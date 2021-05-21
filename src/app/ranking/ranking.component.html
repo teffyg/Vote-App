@@ -1,0 +1,25 @@
+<h2 class="text-center">Ranking</h2>
+<div class="container">
+  <p>
+    {{VoteRanking}}
+  </p>
+  <div >
+    <ul >
+      <li *ngFor="let cr of candidatesResults">
+        <div>
+          <img src= {{cr.img}} class="rounded-circle">
+          <h4>{{cr.name}} {{cr.surname}} </h4>
+          <h5>"{{cr.party}}"</h5>
+          <div class="progress">
+            <div class="progress-bar"  role="progressbar" aria-valuenow=""
+            aria-valuemin="0" aria-valuemax="100" [style.width]="cr.percent+'%'">
+            {{cr.percent}} %
+            </div>
+          </div>
+        </div>
+        <br>
+      </li>
+    </ul>
+    
+  </div>
+</div>
